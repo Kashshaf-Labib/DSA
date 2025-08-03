@@ -1,0 +1,1 @@
+{"name":"Local: 05_","url":"e:\\DSA\\20. Binary Tree and Binary Search Tree\\05_.cpp","tests":[{"id":1700671108531,"input":"15\n1 2 2 4 3 3 4 -1 -1 5 -1 -1 5 -1 -1 \n\n\n\n\n\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\20. Binary Tree and Binary Search Tree\\05_.cpp","group":"local","local":true}

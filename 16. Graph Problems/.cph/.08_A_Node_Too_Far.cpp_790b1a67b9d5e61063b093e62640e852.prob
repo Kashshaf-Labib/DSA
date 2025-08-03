@@ -1,0 +1,1 @@
+{"name":"Local: 08_A_Node_Too_Far","url":"e:\\Labib Temp\\Graph\\08_A_Node_Too_Far.cpp","tests":[{"id":1699163552603,"input":"1\n4 5 2\n..#..\n.C#C.\n##..#\n..C#C\n1 1\n4 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Labib Temp\\Graph\\08_A_Node_Too_Far.cpp","group":"local","local":true}

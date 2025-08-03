@@ -1,0 +1,226 @@
+/*“So, be patient. Surely Allah’s promise is true, and let not the disbelievers shake your firmness” (Quran, 30:60)*/
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+
+    // constructor
+    Node(int data)
+    {
+        this->data = data;
+        next = NULL;
+    }
+
+    // destructor
+    ~Node()
+    {
+        int value = this->data;
+        if (this->next != NULL)
+        {
+            delete next;
+            next = NULL;
+        }
+        cout << "Memory has been freed for node with value " << value << endl;
+    }
+};
+
+void insertAtHead(Node *&head, Node *&tail, int data) // Head is Node type pointer
+{
+    if (head == NULL)
+    {
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else
+    {
+        Node *temp = new Node(data);
+        temp->next = head;
+        head = temp;
+    }
+}
+
+void insertAtTail(Node *&head, Node *&tail, int data)
+{
+    if (head == NULL)
+    {
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else
+    {
+        Node *temp = new Node(data);
+        tail->next = temp;
+        tail = temp;
+    }
+}
+
+void insertAtPosition(Node *&head, Node *&tail, int position, int data)
+{
+    // if position is 1st
+    if (position == 1)
+    {
+        insertAtHead(head, tail, data);
+        return;
+    }
+    int count = 1;
+    Node *temp = head;
+    while (count < position - 1)
+    {
+        temp = temp->next;
+        count++;
+    }
+
+    if (temp->next == NULL) // if the position is the last position
+    {
+        insertAtTail(head, tail, data);
+        return;
+    }
+
+    Node *nodetoinsert = new Node(data);
+    nodetoinsert->next = temp->next;
+    temp->next = nodetoinsert;
+}
+
+void print(Node *&head)
+{
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void deleteNodebyPosition(Node *&head, Node *&tail, int position)
+{
+    // Deleting first node
+    if (position == 1)
+    {
+        Node *temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+
+    // Deleting node at any other position
+    else
+    {
+        int count = 1;
+        Node *curr = head;
+        Node *prev = NULL;
+        while (count < position)
+        {
+            prev = curr;
+            curr = curr->next;
+            count++;
+        }
+        if (curr->next == NULL) // Means if the position is at the end (we need to handle the tail)
+        {
+            tail = prev;
+            prev->next = curr->next;
+            curr->next = NULL;
+            delete curr;
+        }
+        else
+        {
+            prev->next = curr->next;
+            curr->next = NULL;
+            delete curr;
+        }
+    }
+}
+
+void deleteNodebyValue(Node *&head, Node *&tail, int value)
+{
+    Node *prev = NULL;
+    Node *curr = head;
+    int count = 1;
+    while (curr->data != value)
+    {
+        prev = curr;
+        curr = curr->next;
+        count++;
+    }
+    if (count == 1) // Means the value is at position 1
+    {
+        Node *temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+    else if (curr->next == NULL) // Means if the value is at the last position (we need to handle the tail manually)
+    {
+        tail = prev;
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+    else
+    {
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
+int main()
+{
+    ios_base ::sync_with_stdio(0);
+    cin.tie(0);
+
+    Node *node1 = new Node(10);
+    Node *head = node1;
+    Node *tail = node1;
+
+    insertAtTail(head, tail, 11);
+    insertAtTail(head, tail, 12);
+    insertAtTail(head, tail, 13);
+    insertAtTail(head, tail, 14);
+    insertAtTail(head, tail, 15);
+
+    Node *evenTail = NULL;
+    Node *oddTail = NULL;
+    Node *evenHead = NULL;
+    Node *oddHead = NULL;
+
+    Node *temp = head;
+
+    while (temp->next != NULL)
+    {
+        if (temp->data % 2 == 0)
+        {
+            insertAtTail(evenHead, evenTail, temp->data);
+        }
+        else
+        {
+            insertAtTail(oddHead, oddTail, temp->data);
+        }
+        temp = temp->next;
+    }
+    if (temp->data % 2 == 0)
+    {
+        insertAtTail(evenHead, evenTail, temp->data);
+    }
+    else
+    {
+        insertAtTail(oddHead, oddTail, temp->data);
+    }
+
+    print(evenHead);
+    print(oddHead);
+
+    return 0;
+}

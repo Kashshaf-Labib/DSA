@@ -1,0 +1,26 @@
+Problem A: The Crystal Maze
+
+In this problem we were given a MxN 2D grid filled with '#'(Wall), 'C'(Crystal),'.'(empty cell). From this grid we need to find
+the number of crystal from a specific position which will be given as query. 
+
+The idea is to run a dfs from the x,y position and if we find 'C' along the path, we will increase the number of 
+answer. To travel along the grid, there are two direction arrays which denotes to go horizontal and vertical paths.
+But we cannot run dfs every time a query is given for the sake of complexity. So I took a visited array to assign each 
+query as a territory. For each query, we will assign the amount of crystal to that visited array and get the result.
+
+
+Problem B: Guilty Prince
+
+In this problem we are given a 2D grid with water denoted by '#', lands denoted by '.' and initial position of the 
+prince. We need to find out the number of unit lands that can be travelled by the prince from a initial position.
+
+Idea for this problem is to run a dfs from the initial position of the prince and if we face water then return to the previous 
+call. Along the lands, we will increase the answer. A direction array is used here to travel through the lands horizontally and vertically.
+
+
+Problem C: Oild Deposits
+
+In this problem we need to find the adjacent '@' which denotes oil pockets. Adjacency is defined horizontally,
+vertically and diagonally here. To find the number of components, we run a dfs from any non visited position (i,j)
+ and run the dfs until we face '*' empty pockets in all sides. Then run the dfs again for the non visited positions. 
+ Basically we need to run loop from 1 to rowsize and 1 to columnsize and find the number of components. 

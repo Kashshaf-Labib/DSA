@@ -1,0 +1,1 @@
+{"name":"Local: 01_Precomputation_RangeSum_RangeMinMax","url":"e:\\DSA\\23. Sparse Table\\01_Precomputation_RangeSum_RangeMinMax.cpp","tests":[{"id":1701286845571,"input":"8\n6 13 5 4 7 1 22 9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\23. Sparse Table\\01_Precomputation_RangeSum_RangeMinMax.cpp","group":"local","local":true}

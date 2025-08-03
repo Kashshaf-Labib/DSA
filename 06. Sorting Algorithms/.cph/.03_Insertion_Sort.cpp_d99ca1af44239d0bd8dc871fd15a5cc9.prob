@@ -1,0 +1,1 @@
+{"name":"Local: 03_Insertion_Sort","url":"e:\\DSA\\06. Sorting Algorithms\\03_Insertion_Sort.cpp","tests":[{"id":1709784538540,"input":"5\n5 4 3 2 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\06. Sorting Algorithms\\03_Insertion_Sort.cpp","group":"local","local":true}

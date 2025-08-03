@@ -1,0 +1,35 @@
+/*“So, be patient. Surely Allah’s promise is true, and let not the disbelievers shake your firmness” (Quran, 30:60)*/
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ios_base ::sync_with_stdio(0);
+    cin.tie(0);
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j >= 1; j--)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+
+    // with while loop:
+    // int i = 1;
+    // while (i <= n)
+    // {
+    //     int j = i;
+    //     while (j >= 1)
+    //     {
+    //         cout << j << " ";
+    //         j--;
+    //     }
+    //     cout << endl;
+    //     i++;
+    // }
+
+    return 0;
+}
